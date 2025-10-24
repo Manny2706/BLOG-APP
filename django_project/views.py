@@ -1,4 +1,15 @@
 from django.http import HttpResponse
+from django.shortcuts import render
+
+# Create your views here.   
+
+def home(request):
+    data={
+        'title':'Home Page',
+        'welcome_message':'Welcome to the Home Page!'
+    }
+    return render(request, 'index.html', data)
+
 def about_us(request):
     return HttpResponse("This is the About Us page.")# can pass any string here
 def course(request):

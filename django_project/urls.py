@@ -18,12 +18,14 @@ from django.contrib import admin
 from django.urls import path
 from django_project import views
 urlpatterns = [
+    path("", views.home, name='home'),
     path('admin/', admin.site.urls),
+
     path ('about-us/', views.about_us, name='about_us'),
     path ('course/', views.course, name='course'),
     path ('course/<int:course_id>/', views.course_detail, name='course_detail'),# int:course_id captures an integer parameter from the URL
-"int :course_id should be replaced with an actual course id for the course_detail view to work."
-"slug :course_slug can also be used to capture string parameters from the URL.e.g. path('course/<slug:course_slug>/', views.course_detail, name='course_detail'),"
-" without int or slug, the parameter will be treated as a string by default and any value can be passed."
+# "int :course_id should be replaced with an actual course id for the course_detail view to work."
+# "slug :course_slug can also be used to capture string parameters from the URL.e.g. path('course/<slug:course_slug>/', views.course_detail, name='course_detail'),"
+# " without int or slug, the parameter will be treated as a string by default and any value can be passed."
 
 ]
